@@ -8,7 +8,8 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SetBusTimesViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

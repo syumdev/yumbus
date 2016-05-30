@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		472656AD1CFA19D700226C1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472656AC1CFA19D700226C1C /* AppDelegate.swift */; };
-		472656AF1CFA19D700226C1C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472656AE1CFA19D700226C1C /* FirstViewController.swift */; };
-		472656B11CFA19D700226C1C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472656B01CFA19D700226C1C /* SecondViewController.swift */; };
+		472656AF1CFA19D700226C1C /* ShowBusTimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472656AE1CFA19D700226C1C /* ShowBusTimesViewController.swift */; };
+		472656B11CFA19D700226C1C /* SetBusTimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472656B01CFA19D700226C1C /* SetBusTimesViewController.swift */; };
 		472656B41CFA19D700226C1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472656B21CFA19D700226C1C /* Main.storyboard */; };
 		472656B61CFA19D700226C1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472656B51CFA19D700226C1C /* Assets.xcassets */; };
 		472656B91CFA19D700226C1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472656B71CFA19D700226C1C /* LaunchScreen.storyboard */; };
@@ -37,8 +37,8 @@
 /* Begin PBXFileReference section */
 		472656A91CFA19D700226C1C /* YumBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YumBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		472656AC1CFA19D700226C1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		472656AE1CFA19D700226C1C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		472656B01CFA19D700226C1C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		472656AE1CFA19D700226C1C /* ShowBusTimesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBusTimesViewController.swift; sourceTree = "<group>"; };
+		472656B01CFA19D700226C1C /* SetBusTimesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBusTimesViewController.swift; sourceTree = "<group>"; };
 		472656B31CFA19D700226C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		472656B51CFA19D700226C1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		472656B81CFA19D700226C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				472656AC1CFA19D700226C1C /* AppDelegate.swift */,
-				472656AE1CFA19D700226C1C /* FirstViewController.swift */,
-				472656B01CFA19D700226C1C /* SecondViewController.swift */,
+				472656AE1CFA19D700226C1C /* ShowBusTimesViewController.swift */,
+				472656B01CFA19D700226C1C /* SetBusTimesViewController.swift */,
 				472656B21CFA19D700226C1C /* Main.storyboard */,
 				472656B51CFA19D700226C1C /* Assets.xcassets */,
 				472656B71CFA19D700226C1C /* LaunchScreen.storyboard */,
@@ -259,9 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				472656B11CFA19D700226C1C /* SecondViewController.swift in Sources */,
+				472656B11CFA19D700226C1C /* SetBusTimesViewController.swift in Sources */,
 				472656AD1CFA19D700226C1C /* AppDelegate.swift in Sources */,
-				472656AF1CFA19D700226C1C /* FirstViewController.swift in Sources */,
+				472656AF1CFA19D700226C1C /* ShowBusTimesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +486,7 @@
 				472656D51CFA19D700226C1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		472656D61CFA19D700226C1C /* Build configuration list for PBXNativeTarget "YumBusTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +495,7 @@
 				472656D81CFA19D700226C1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		472656D91CFA19D700226C1C /* Build configuration list for PBXNativeTarget "YumBusUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +504,7 @@
 				472656DB1CFA19D700226C1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
