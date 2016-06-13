@@ -16,6 +16,7 @@
 		472656C41CFA19D700226C1C /* YumBusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472656C31CFA19D700226C1C /* YumBusTests.swift */; };
 		472656CF1CFA19D700226C1C /* YumBusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472656CE1CFA19D700226C1C /* YumBusUITests.swift */; };
 		4727FD8D1D0E6169002E55F7 /* NextBusRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4727FD8C1D0E6169002E55F7 /* NextBusRetriever.swift */; };
+		4727FD8F1D0F3A67002E55F7 /* newBusRouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4727FD8E1D0F3A67002E55F7 /* newBusRouteCell.swift */; };
 		4740BCA91CFD34BC005BB33C /* showInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4740BCA81CFD34BC005BB33C /* showInfoCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		472656CE1CFA19D700226C1C /* YumBusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumBusUITests.swift; sourceTree = "<group>"; };
 		472656D01CFA19D700226C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4727FD8C1D0E6169002E55F7 /* NextBusRetriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextBusRetriever.swift; sourceTree = "<group>"; };
+		4727FD8E1D0F3A67002E55F7 /* newBusRouteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newBusRouteCell.swift; sourceTree = "<group>"; };
 		4740BCA81CFD34BC005BB33C /* showInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showInfoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 				472656B71CFA19D700226C1C /* LaunchScreen.storyboard */,
 				472656BA1CFA19D700226C1C /* Info.plist */,
 				4727FD8C1D0E6169002E55F7 /* NextBusRetriever.swift */,
+				4727FD8E1D0F3A67002E55F7 /* newBusRouteCell.swift */,
 			);
 			path = YumBus;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				472656B11CFA19D700226C1C /* SetBusTimesViewController.swift in Sources */,
 				472656AD1CFA19D700226C1C /* AppDelegate.swift in Sources */,
 				4727FD8D1D0E6169002E55F7 /* NextBusRetriever.swift in Sources */,
+				4727FD8F1D0F3A67002E55F7 /* newBusRouteCell.swift in Sources */,
 				4740BCA91CFD34BC005BB33C /* showInfoCell.swift in Sources */,
 				472656AF1CFA19D700226C1C /* ShowBusTimesViewController.swift in Sources */,
 			);

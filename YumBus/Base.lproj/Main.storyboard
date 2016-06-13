@@ -84,6 +84,24 @@
                                             <outlet property="_lblBusTimeLeft" destination="Vn2-jl-yEX" id="B6L-wl-xfZ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newRouteCell" id="YBp-Cn-CHv">
+                                        <rect key="frame" x="0.0" y="126" width="600" height="98"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YBp-Cn-CHv" id="JPu-NL-2GI">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xK-ma-xIa">
+                                                    <rect key="frame" x="263" y="34" width="75" height="30"/>
+                                                    <state key="normal" title="New Route"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1xK-ma-xIa" firstAttribute="top" secondItem="JPu-NL-2GI" secondAttribute="topMargin" constant="26" id="8N7-EX-To6"/>
+                                                <constraint firstItem="1xK-ma-xIa" firstAttribute="leading" secondItem="JPu-NL-2GI" secondAttribute="leadingMargin" constant="255" id="de6-PK-yoK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

@@ -16,8 +16,6 @@ class NextBusRetriever: NSObject, NSXMLParserDelegate {
     
     var element = NSString()
     var secondsArray: [String] = []
-    
-    //var delegate:NSXMLParserDelegate
     var parser = NSXMLParser()
     
     
@@ -44,7 +42,6 @@ class NextBusRetriever: NSObject, NSXMLParserDelegate {
     }
     
     @objc func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
-        print("parser")
         self.element = elementName
         if self.element == "prediction" {
             let seconds = attributeDict["seconds"]

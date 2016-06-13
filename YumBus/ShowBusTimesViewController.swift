@@ -14,7 +14,7 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
     @IBOutlet weak var _tableView: UITableView!
     
     var retriever:NextBusRetriever!
-    let _cellReuseIdentifier = "showInfoCell"
+    
     var _refreshControl = UIRefreshControl()
     var _tableViewController = UITableViewController(style: .Plain)
     var secondsArray: [String] = []
@@ -25,13 +25,12 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
         super.viewDidLoad()
         self.dateFormatter.dateFormat = "HH:mm:ss"
         strRefreshTime = dateFormatter.stringFromDate(NSDate())
-        
+        print(strRefreshTime)
         self.retriever =  NextBusRetriever(agency:"mbta",route:"66",stop:"1111")
         self.retriever.parseNextBus()
         _tableView.backgroundView=_refreshControl
         setTableView()
         addRefreshControl()
-        print(retriever.url)
         self.secondsArray = retriever.secondsArray
        
 
@@ -53,21 +52,19 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
         
         _refreshControl.attributedTitle = NSAttributedString(string: "Last updated on " + self.strRefreshTime)
         _tableViewController.refreshControl = _refreshControl
-        self.strRefreshTime = dateFormatter.stringFromDate(NSDate())
+        
+        print(strRefreshTime)
         _refreshControl.addTarget(self, action: "refreshTableView", forControlEvents: UIControlEvents.ValueChanged)
         _tableView?.addSubview(_refreshControl)
-        
-        
         
     }
     
     func refreshTableView(){
         retriever.removeAll()
         retriever.parseNextBus()
+        self.strRefreshTime = dateFormatter.stringFromDate(NSDate())
+        _refreshControl.attributedTitle = NSAttributedString(string: "Last updated on " + self.strRefreshTime)
         self.secondsArray = retriever.secondsArray
-        for second in (secondsArray){
-            print(second)
-        }
         _tableView.reloadData()
         
         let delayInSeconds = 0.5;
@@ -91,8 +88,16 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cellReuseIdentifier:String!
+        if(indexPath.row == 0) {
+            cellReuseIdentifier = "showInfoCell"
+        }
         
-        let cell = self._tableView.dequeueReusableCellWithIdentifier(_cellReuseIdentifier, forIndexPath: indexPath) as! showInfoCell
+        if(indexPath.row == 1) {
+            cellReuseIdentifier = "newRouteCell"
+        }
+        
+        let cell = self._tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! showInfoCell
         cell._lblBusNumber.text="66"
         cell._lblBusTimeLeft.text = textForLblBusTimeLeft()
         
