@@ -8,24 +8,27 @@
 
 import UIKit
 
+
 class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var _tableView: UITableView!
     
-    var _parser = NSXMLParser()
-    var _element = NSString()
-    let _url = NSURL(string:"http://webservices.nextbus.com/service/publicXMLFeed?command=predictions&a=mbta&r=66&s=1111")
-    var _secondsArray: [String] = []
+    var retriever:NextBusRetriever!
     let _cellReuseIdentifier = "showInfoCell"
     var _refreshControl = UIRefreshControl()
     var _tableViewController = UITableViewController(style: .Plain)
+    var secondsArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.retriever =  NextBusRetriever(agency:"mbta",route:"66",stop:"1111")
+        self.retriever.parseNextBus()
         _tableView.backgroundView=_refreshControl
-        parseNextBus()
         setTableView()
         addRefreshControl()
+        print(retriever.url)
+        self.secondsArray = retriever.secondsArray
     }
     
 
@@ -34,18 +37,6 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
         // Dispose of any resources that can be recreated.
     }
     
-    func setLblBusTimeLeft(){
-    
-    }
-    
-    func parseNextBus() {
-        _parser = (NSXMLParser(contentsOfURL: _url!))!
-        _parser.delegate=self
-        _parser.parse()
-        for element in _secondsArray {
-            print(element)
-        }
-    }
     
     func setTableView(){
         _tableView.delegate=self
@@ -65,8 +56,12 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
     }
     
     func refreshTableView(){
-        _secondsArray.removeAll()
-        parseNextBus()
+        retriever.removeAll()
+        retriever.parseNextBus()
+        self.secondsArray = retriever.secondsArray
+        for second in (secondsArray){
+            print(second)
+        }
         _tableView.reloadData()
         
         let delayInSeconds = 0.5;
@@ -80,13 +75,7 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
         self.refreshTableView()
     }
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
-        _element = elementName
-        if _element == "prediction" {
-            let seconds = attributeDict["seconds"]
-            _secondsArray.append(seconds!)
-        }
-    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -108,11 +97,11 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
     func textForLblBusTimeLeft() -> String{
         var timeText = String()
         
-        for time in _secondsArray.prefix(2){
+        for time in self.secondsArray.prefix(2){
             timeText += secondsToMinuteSeconds(time) + ", "
         }
         
-        timeText += secondsToMinuteSeconds(_secondsArray[2]) + " min"
+        timeText += secondsToMinuteSeconds(self.secondsArray[2]) + " min"
         
         return timeText
     }
