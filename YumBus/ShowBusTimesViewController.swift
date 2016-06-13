@@ -18,9 +18,13 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
     var _refreshControl = UIRefreshControl()
     var _tableViewController = UITableViewController(style: .Plain)
     var secondsArray: [String] = []
+    var strRefreshTime:String!
+    var dateFormatter = NSDateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dateFormatter.dateFormat = "HH:mm:ss"
+        strRefreshTime = dateFormatter.stringFromDate(NSDate())
         
         self.retriever =  NextBusRetriever(agency:"mbta",route:"66",stop:"1111")
         self.retriever.parseNextBus()
@@ -29,6 +33,8 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
         addRefreshControl()
         print(retriever.url)
         self.secondsArray = retriever.secondsArray
+       
+
     }
     
 
@@ -44,14 +50,14 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
     }
     
     func addRefreshControl(){
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss"
-        let strRefreshTime = dateFormatter.stringFromDate(NSDate())
         
-        _refreshControl.attributedTitle = NSAttributedString(string: "Last updated on " + strRefreshTime)
+        _refreshControl.attributedTitle = NSAttributedString(string: "Last updated on " + self.strRefreshTime)
         _tableViewController.refreshControl = _refreshControl
+        self.strRefreshTime = dateFormatter.stringFromDate(NSDate())
         _refreshControl.addTarget(self, action: "refreshTableView", forControlEvents: UIControlEvents.ValueChanged)
         _tableView?.addSubview(_refreshControl)
+        
+        
         
     }
     
@@ -101,7 +107,7 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
             timeText += secondsToMinuteSeconds(time) + ", "
         }
         
-        timeText += secondsToMinuteSeconds(self.secondsArray[2]) + " min"
+        timeText += secondsToMinuteSeconds(secondsArray[2])
         
         return timeText
     }
@@ -111,8 +117,17 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
     }
     
     func secondsToMinuteSeconds(time: String) -> String {
-        return String(Int(time)!/60)
+        
+        let min = String(Int(time)!/60)
+        let sec = String(Int(time)!%60)
+        
+        if(Int(min)! < 1) {
+            return sec + " seconds, "
+        }
+        
+        return min+":"+sec+" min"
     }
+    
     
     
     
