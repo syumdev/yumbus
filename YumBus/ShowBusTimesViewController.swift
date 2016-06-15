@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 
 class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITableViewDelegate, UITableViewDataSource{
@@ -32,6 +33,9 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
         setTableView()
         addRefreshControl()
         self.secondsArray = retriever.secondsArray
+        
+        let helloWorldTimer = NSTimer.scheduledTimerWithTimeInterval(15.0, target: self, selector: Selector("refreshTableView"), userInfo: nil, repeats: true)
+    
        
 
     }
@@ -84,23 +88,28 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
     }
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         var cellReuseIdentifier:String!
+        var cell:showInfoCell!
+        
         if(indexPath.row == 0) {
             cellReuseIdentifier = "showInfoCell"
+            cell = self._tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! showInfoCell
+            cell._lblBusNumber.text="66"
+            cell._lblBusTimeLeft.text = textForLblBusTimeLeft()
         }
         
         if(indexPath.row == 1) {
+            
             cellReuseIdentifier = "newRouteCell"
+            var routeCell = self._tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! newRouteCell
+            return routeCell
+       
         }
-        
-        let cell = self._tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! showInfoCell
-        cell._lblBusNumber.text="66"
-        cell._lblBusTimeLeft.text = textForLblBusTimeLeft()
-        
         
         return cell
     }
@@ -127,10 +136,10 @@ class ShowBusTimesViewController: UIViewController, NSXMLParserDelegate, UITable
         let sec = String(Int(time)!%60)
         
         if(Int(min)! < 1) {
-            return sec + " seconds, "
+            return sec + " seconds"
         }
         
-        return min+":"+sec+" min"
+        return min+"min "+sec+"sec"
     }
     
     

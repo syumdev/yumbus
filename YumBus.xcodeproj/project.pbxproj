@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		472656AD1CFA19D700226C1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472656AC1CFA19D700226C1C /* AppDelegate.swift */; };
 		472656AF1CFA19D700226C1C /* ShowBusTimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472656AE1CFA19D700226C1C /* ShowBusTimesViewController.swift */; };
-		472656B11CFA19D700226C1C /* SetBusTimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472656B01CFA19D700226C1C /* SetBusTimesViewController.swift */; };
+		472656B11CFA19D700226C1C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472656B01CFA19D700226C1C /* MapViewController.swift */; };
 		472656B41CFA19D700226C1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472656B21CFA19D700226C1C /* Main.storyboard */; };
 		472656B61CFA19D700226C1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472656B51CFA19D700226C1C /* Assets.xcassets */; };
 		472656B91CFA19D700226C1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472656B71CFA19D700226C1C /* LaunchScreen.storyboard */; };
 		472656C41CFA19D700226C1C /* YumBusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472656C31CFA19D700226C1C /* YumBusTests.swift */; };
 		472656CF1CFA19D700226C1C /* YumBusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472656CE1CFA19D700226C1C /* YumBusUITests.swift */; };
 		4727FD8D1D0E6169002E55F7 /* NextBusRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4727FD8C1D0E6169002E55F7 /* NextBusRetriever.swift */; };
-		4727FD8F1D0F3A67002E55F7 /* newBusRouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4727FD8E1D0F3A67002E55F7 /* newBusRouteCell.swift */; };
+		4727FD911D0F469F002E55F7 /* newRouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4727FD901D0F469F002E55F7 /* newRouteCell.swift */; };
 		4740BCA91CFD34BC005BB33C /* showInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4740BCA81CFD34BC005BB33C /* showInfoCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +41,7 @@
 		472656A91CFA19D700226C1C /* YumBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YumBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		472656AC1CFA19D700226C1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		472656AE1CFA19D700226C1C /* ShowBusTimesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBusTimesViewController.swift; sourceTree = "<group>"; };
-		472656B01CFA19D700226C1C /* SetBusTimesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBusTimesViewController.swift; sourceTree = "<group>"; };
+		472656B01CFA19D700226C1C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		472656B31CFA19D700226C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		472656B51CFA19D700226C1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		472656B81CFA19D700226C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		472656CE1CFA19D700226C1C /* YumBusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumBusUITests.swift; sourceTree = "<group>"; };
 		472656D01CFA19D700226C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4727FD8C1D0E6169002E55F7 /* NextBusRetriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextBusRetriever.swift; sourceTree = "<group>"; };
-		4727FD8E1D0F3A67002E55F7 /* newBusRouteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newBusRouteCell.swift; sourceTree = "<group>"; };
+		4727FD901D0F469F002E55F7 /* newRouteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newRouteCell.swift; sourceTree = "<group>"; };
 		4740BCA81CFD34BC005BB33C /* showInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showInfoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,14 +107,14 @@
 			children = (
 				472656AC1CFA19D700226C1C /* AppDelegate.swift */,
 				472656AE1CFA19D700226C1C /* ShowBusTimesViewController.swift */,
-				472656B01CFA19D700226C1C /* SetBusTimesViewController.swift */,
+				472656B01CFA19D700226C1C /* MapViewController.swift */,
 				472656B21CFA19D700226C1C /* Main.storyboard */,
 				4740BCA81CFD34BC005BB33C /* showInfoCell.swift */,
 				472656B51CFA19D700226C1C /* Assets.xcassets */,
 				472656B71CFA19D700226C1C /* LaunchScreen.storyboard */,
 				472656BA1CFA19D700226C1C /* Info.plist */,
 				4727FD8C1D0E6169002E55F7 /* NextBusRetriever.swift */,
-				4727FD8E1D0F3A67002E55F7 /* newBusRouteCell.swift */,
+				4727FD901D0F469F002E55F7 /* newRouteCell.swift */,
 			);
 			path = YumBus;
 			sourceTree = "<group>";
@@ -268,10 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				472656B11CFA19D700226C1C /* SetBusTimesViewController.swift in Sources */,
+				4727FD911D0F469F002E55F7 /* newRouteCell.swift in Sources */,
+				472656B11CFA19D700226C1C /* MapViewController.swift in Sources */,
 				472656AD1CFA19D700226C1C /* AppDelegate.swift in Sources */,
 				4727FD8D1D0E6169002E55F7 /* NextBusRetriever.swift in Sources */,
-				4727FD8F1D0F3A67002E55F7 /* newBusRouteCell.swift in Sources */,
 				4740BCA91CFD34BC005BB33C /* showInfoCell.swift in Sources */,
 				472656AF1CFA19D700226C1C /* ShowBusTimesViewController.swift in Sources */,
 			);
